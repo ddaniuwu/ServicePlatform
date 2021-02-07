@@ -1,0 +1,30 @@
+
+
+
+
+<div class="container text-center">   
+    
+<img src="{{ url_for('static', filename='img/logo.jpeg') }}"
+alt="Platzi logo">
+ 
+<ul class="nav nav-tabs ">
+    {% if current_user.is_authenticated %}
+    <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+    {% endif %}
+    <li class="nav-item">
+      <a class="nav-link active text-success" href="{{ url_for('index') }}">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-success" href="{{ url_for('activities') }}">Servicio Social</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-success" href="#">Residencias</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-success" href="{{ url_for('upload') }}">Inscripción / Reinscripción</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled text-success" href="#" tabindex="-1" aria-disabled="true">Calificaciones </a>
+    </li>
+  </ul>
+  </div>

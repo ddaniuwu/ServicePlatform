@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% import 'bootstrap/wtf.html' as wtf%}
+{% import 'macros2.html' as macros %}
+
+{% block head %}
+{{ super() }}
+<title>
+        {% block title %}
+        {{ super() }}
+        Servicio Social
+        {% endblock %}
+</title>
+
+    <link rel="stylesheet" href="{{ url_for('static' , filename = 'css/styles.css') }}">
+{% endblock%}
+
+
+{% block content %}
+<div class="container text-center ">
+{% if username%}
+<h1>{{ username | capitalize }}</h1>
+{% endif %}
+
+{% if user_ip %} 
+{% else %}
+    <a href ="{{ url_for('index') }}"> ir al inicio</a>
+{% endif %}
+</div>
+
+<div class="container text-center">
+    {{wtf.quick_form(student_form)}}
+</div>
+
+<div class="container">
+    <h1 class="h1">Mis datos</h1>
+<ul>
+</ul>
+
+<table class="table table-condensed">
+    <tr>
+      <td class="success">Nombre</td>
+      <td class="success">Apellido Paterno</td>
+      <td class="success">Apellido Materno</td>
+      <td class="success">Status</td>
+    </tr>
+    <tr>
+        <td>{% if username%}
+            {{ username | capitalize }}
+            {% endif %}
+        </td>
+        <td>{% if username%}
+            {{ ap1 }}
+            {% endif %}
+        </td>
+        <td>{% if username%}
+            {{ ap2 }}
+            {% endif %}
+        </td>
+        <td>{% if username%}
+            {{ status }}  
+        </td>{% endif %}
+
+    </tr>
+    </table>
+    
+    {% for user in users %}
+            {{ macros2.render_user(user) }}
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+

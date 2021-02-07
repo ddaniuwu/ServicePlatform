@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% import 'macros.html' as macros %}
+
+{% block title %}
+    {{ super() }}
+    Reinscripción
+{% endblock %}
+
+{% block content %}
+<div class="container text-center ">
+    <h1>Periodo de Reinscripción e Inscripciones</h1>
+{% if username%}
+<h1>{{ username | capitalize }}</h1>
+{% endif %}
+
+</div>
+
+<div class="container text-center">
+    <h2>Sube la linea de captura de tu comprobante de pago aquí</h2>
+    {{wtf.quick_form(upload_form)}}
+</div>
+
+
+<div class="container">
+
+</div>
+
+{% endblock %}
+
