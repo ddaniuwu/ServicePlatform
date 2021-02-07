@@ -11,10 +11,6 @@
 
 **Table of Contents**
 
-[TOCM]
-
-[TOC]
-
 #WTF Documentation
 #WTF Documentation link [WTF](https://wtforms.readthedocs.io/en/2.3.x/ "WTF Dcoumentation link")
 
